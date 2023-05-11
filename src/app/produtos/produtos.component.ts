@@ -1,22 +1,65 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-produtos',
   templateUrl: './produtos.component.html',
   styleUrls: ['./produtos.component.scss']
 })
-export class ProdutosComponent {
+export class ProdutosComponent implements OnInit {
+  products: { name: string; desc: string; }[] = [];
+  constructor(){
+  }
 
-// let container = document.getElementById('container')
+  ngOnInit(): void {
+    //AQUI É O INICIO DA EXECUÇÃO DAS FUNÇÕES
+    this.products = this.getProducts();
+  }
 
-// Obj.map((val) =>{
-//   container.innerHTML+=
-//   `<div class="produto-single">
-//   <img class="card-img-top" src="${val.img}"></img>
-//   <p>${val.nome}</p>
-//   <p class="valor">${val.valor}</p>
-//   <p>${val.descricao}</p>
-//   </div>`;
-// }) professor ve se vai funcionar :)
 
+  getProducts() {
+  const products: { name: string; desc: string; }[] = [
+      {
+        desc: "descrição",
+        name: 'Tim'
+      },
+      {
+        desc: "descrição",
+        name: 'Tim'
+      },
+      {
+        desc: "descrição",
+        name: 'Tim'
+      },
+      {
+        desc: "descrição",
+        name: 'Tim'
+      },
+      {
+        desc: "descrição",
+        name: 'Tim'
+      },
+      {
+        desc: "descrição",
+        name: 'Tim'
+      },
+      {
+        desc: "descrição",
+        name: 'Tim'
+      },
+      {
+        desc: "descrição",
+        name: 'Tim'
+      },
+      {
+        desc: "descrição",
+        name: 'Tim'
+      },
+      {
+        desc: "descrição",
+        name: 'Tim'
+      },
+    ]
+
+    return products;
+  }
 }
