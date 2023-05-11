@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ProdutosComponent } from './produtos/produtos.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -13,7 +14,8 @@ import { ProdutosComponent } from './produtos/produtos.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    ProdutosComponent
+    ProdutosComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
