@@ -34,3 +34,30 @@
     margin: 2rem;
     width: 900px;
 }
+ @media (max-width:1000px) { 
+    #container{
+    display: grid;
+    grid: 
+    "card card card";
+    gap: 10px   ;
+    padding: 10px;
+    }
+}
+@media (max-width:700px) {
+    #container{
+        display: grid;
+        grid: 
+        "card card";
+        gap: 10px   ;
+        padding: 10px;
+        }
+}
+@media (max-width:500px) {
+    #container{
+        display: grid;
+        grid: 
+        "card ";
+        gap: 10px   ;
+        padding: 10px;
+        }
+}
