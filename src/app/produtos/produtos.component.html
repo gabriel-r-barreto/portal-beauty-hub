@@ -1,13 +1,4 @@
 <div class="dropdown" id="search">
-  <button
-    class="btn btn-secondary dropdown-toggle"
-    type="button"
-    data-bs-toggle="dropdown"
-    aria-expanded="false">
-    Dropdown button
-  </button>
-
-  <div class="dropdown-menu">
 
     <label for="nome">Nome do produto:</label>
     <input type="text" name="nome" id="serachName" placeholder="nome do produto">
@@ -22,8 +13,10 @@
     <input type="date" name="validade" id="searchValidade">
 
       <input type="button" value="search">
-  </div>
-</div>
+
+</div> 
+
+
 <div id="container">
   <div class="card" *ngFor="let product of products">
     <div class="productImage">
