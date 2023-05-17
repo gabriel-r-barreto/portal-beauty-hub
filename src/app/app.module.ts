@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { GerenciadorProdutosComponent } from './gerenciador-produtos/gerenciador-produtos.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 
@@ -15,11 +17,14 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppComponent,
     LoginComponent,
     ProdutosComponent,
-    NavbarComponent
+    NavbarComponent,
+    GerenciadorProdutosComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
