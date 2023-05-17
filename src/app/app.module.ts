@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { GerenciadorProdutosComponent } from './gerenciador-produtos/gerenciador-produtos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from "@angular/material/dialog";
+
 
 
 
@@ -23,6 +25,7 @@ import {MatDialogModule} from "@angular/material/dialog";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     MatDialogModule,
     BrowserAnimationsModule
   ],

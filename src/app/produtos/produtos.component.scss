@@ -34,11 +34,28 @@
     margin: 2rem;
     width: 900px;
 }
+#search{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+label{
+    margin: 3px;
+}
+@media (max-width:1150px) { 
+    #container{
+    display: grid;
+    grid: 
+    "card card card card";
+    gap: 10px   ;
+    padding: 10px;
+    }
+}
  @media (max-width:1000px) { 
     #container{
     display: grid;
     grid: 
-    "card card card";
+    "card card card ";
     gap: 10px   ;
     padding: 10px;
     }
@@ -47,7 +64,7 @@
     #container{
         display: grid;
         grid: 
-        "card card";
+        "card card ";
         gap: 10px   ;
         padding: 10px;
         }
