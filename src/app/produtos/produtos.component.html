@@ -1,10 +1,79 @@
+<div class="dropdown" id="search">
+
+    <label for="nome">Nome do produto:</label>
+    <input type="text" name="nome" id="serachName" placeholder="nome do produto">
+
+    <label for="categoria">Categoria do produto:</label>
+    <input type="text" name="categoria" id="searchCategoria" placeholder="categoria do produto">
+
+    <label for="quantidade">Quantidade do produto:</label>
+    <input type="number" name="quantidade" id="searchQuantidade">
+
+    <label for="validade">Data te validade do produto:</label>
+    <input type="date" name="validade" id="searchValidade">
+
+      <input type="button" value="search">
+
+</div> 
+
+
 <div id="container">
-    <div class="card" *ngFor="let product of products">
-        <img src="../../assets/esmalte.png" class="card-img-top" alt="esmalte">
-        <div class="card-body">
-            <h5 class="card-title">{{product.name}}</h5>
-            <p class="card-text">{{product.desc}}</p>
-            <a href="#" class="btn btn-primary">Ação</a>
-        </div>
+  <div class="card" *ngFor="let product of products">
+    <div class="productImage">
+      <a
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+      >
+        <img
+          src="../../assets/esmalte.png"
+          class="card-img-top"
+          alt="esmalte"
+        />
+        <img
+          src="../../assets/edit_image.png"
+          width="190px"
+          class="card-img-edit"
+          alt="ícone de edição"
+        />
+      </a>
     </div>
+
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text">{{ product.desc }}</p>
+      <a href="#" class="btn btn-danger">Excluir</a>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  *ngFor="let product of products"
+  id="productModal"
+  tabindex="-1"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          {{ product.name }}
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        {{ product.desc }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
