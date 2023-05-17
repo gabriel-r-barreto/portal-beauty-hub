@@ -28,28 +28,29 @@
 <div id="container">
   <div class="card" *ngFor="let product of products">
     <div class="productImage">
-      <a
-        data-bs-toggle="modal"
-        data-bs-target="#productModal"
-      >
         <img
           src="../../assets/esmalte.png"
           class="card-img-top"
           alt="esmalte"
         />
-        <img
-          src="../../assets/edit_image.png"
-          width="190px"
-          class="card-img-edit"
-          alt="ícone de edição"
-        />
-      </a>
     </div>
 
     <div class="card-body">
       <h5 class="card-title">{{ product.name }}</h5>
       <p class="card-text">{{ product.desc }}</p>
-      <a href="#" class="btn btn-danger">Excluir</a>
+      <p class="card-text">{{ product.categoria }}</p>
+
+      <div id="divBotoes">
+
+        <a data-bs-toggle="modal" data-bs-target="#productModal" >
+          <button class="btn btn-primary p-2">
+              Editar
+              <img/>
+          </button>
+      </a>
+
+        <a href="#" class="btn btn-danger p-2">Excluir</a>
+     </div>
     </div>
   </div>
 </div>
