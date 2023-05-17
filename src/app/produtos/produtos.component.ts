@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import { GerenciadorProdutosComponent } from '../gerenciador-produtos/gerenciador-produtos.component';
 
 @Component({
   selector: 'app-produtos',
@@ -8,7 +10,7 @@ import { AppComponent } from '../app.component';
 })
 export class ProdutosComponent implements OnInit {
   products: { name: string; desc: string; }[] = [];
-  constructor(private _AppComponent: AppComponent){
+  constructor(private _AppComponent: AppComponent, public dialog: MatDialog){
   }
 
   ngOnInit(): void {
@@ -65,4 +67,16 @@ export class ProdutosComponent implements OnInit {
 
     return products;
   }
+
+
+  teste(){
+    const dialogRef = this.dialog.open(GerenciadorProdutosComponent,{
+      height: '400px',
+      width: '800px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
 }
+
