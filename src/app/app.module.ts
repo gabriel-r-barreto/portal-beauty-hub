@@ -7,6 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { GerenciadorProdutosComponent } from './gerenciador-produtos/gerenciador-produtos.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 
@@ -16,12 +19,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     LoginComponent,
     ProdutosComponent,
-    NavbarComponent
+    NavbarComponent,
+    GerenciadorProdutosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
