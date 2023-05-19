@@ -81,8 +81,8 @@ export class ProdutosComponent implements OnInit {
 
   teste(){
     const dialogRef = this.dialog.open(GerenciadorProdutosComponent,{
-      height: '400px',
-      width: '800px',
+      height: '500px',
+      width: '1000px',
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
