@@ -22,13 +22,17 @@
     opacity: 0;
     transition: opacity 0.5s;
 }
-.productImage:hover .card-img-top {
-    cursor: pointer;
-    opacity: 0.5;
-}
-.productImage:hover .card-img-edit {
-    opacity: 0.6;
-    cursor: pointer;
+// .productImage:hover .card-img-top {
+//     cursor: pointer;
+//     opacity: 0.5;
+// }
+// .productImage:hover .card-img-edit {
+//     opacity: 0.6;
+//     cursor: pointer;
+// }
+#divBotoes{
+    display: flex;
+    justify-content: space-around;
 }
 .modal {
     margin: 2rem;

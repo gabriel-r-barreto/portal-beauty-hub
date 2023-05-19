@@ -9,7 +9,7 @@ import { GerenciadorProdutosComponent } from '../gerenciador-produtos/gerenciado
   styleUrls: ['./produtos.component.scss']
 })
 export class ProdutosComponent implements OnInit {
-  products: { name: string; desc: string; }[] = [];
+  products: { name: string; categoria: string;  desc: string; }[] = [];
   constructor(private _AppComponent: AppComponent, public dialog: MatDialog){
   }
 
@@ -22,46 +22,56 @@ export class ProdutosComponent implements OnInit {
 
 
   getProducts() {
-  const products: { name: string; desc: string; }[] = [
+  const products: { name: string; categoria:string; desc: string; }[] = [
       {
         desc: "descrição",
-        name: 'Tim'
+        categoria:'categoria',
+        name: 'Esmalte'
       },
       {
         desc: "descrição",
-        name: 'Tim'
+        categoria:'categoria',
+        name: 'Esmalte'
       },
       {
         desc: "descrição",
-        name: 'Tim'
+        categoria:'categoria',
+        name: 'Esmalte'
       },
       {
         desc: "descrição",
-        name: 'Tim'
+        categoria:'categoria',
+        name: 'Esmalte'
       },
       {
         desc: "descrição",
-        name: 'Tim'
+        categoria:'categoria',
+        name: 'Esmalte'
       },
       {
         desc: "descrição",
-        name: 'Tim'
+        categoria:'categoria',
+        name: 'Esmalte'
       },
       {
         desc: "descrição",
-        name: 'Tim'
+        categoria:'categoria',
+        name: 'Esmalte'
       },
       {
         desc: "descrição",
-        name: 'Tim'
+        categoria:'categoria',
+        name: 'Esmalte'
       },
       {
         desc: "descrição",
-        name: 'Tim'
+        categoria:'categoria',
+        name: 'Esmalte'
       },
       {
         desc: "descrição",
-        name: 'Tim'
+        categoria:'categoria',
+        name: 'Esmalte'
       },
     ]
 
