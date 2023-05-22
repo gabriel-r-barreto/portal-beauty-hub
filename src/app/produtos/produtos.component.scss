@@ -3,7 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-.outroNome {
+.justifyPage {
     display: grid;
     margin: 1rem 2rem;
 }
@@ -24,14 +24,6 @@
     opacity: 0;
     transition: opacity 0.5s;
 }
-// .productImage:hover .card-img-top {
-//     cursor: pointer;
-//     opacity: 0.5;
-// }
-// .productImage:hover .card-img-edit {
-//     opacity: 0.6;
-//     cursor: pointer;
-// }
 #divBotoes{
     display: flex;
     justify-content: space-around;

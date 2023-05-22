@@ -1,71 +1,112 @@
-<div class="outroNome">
+<div class="justifyPage">
   <div class="d-flex gap-3 justify-content-between">
     <div class="form-floating mb-3">
-      <input type="email" class="form-control" id="floatingInput" placeholder="Esmalte">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="Esmalte"
+      />
       <label for="floatingInput">Nome do produto</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Unha">
+      <input
+        type="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Unha"
+      />
       <label for="floatingPassword">Categoria do produto</label>
     </div>
     <div class="form-floating mb-3">
-      <input type="email" class="form-control" id="floatingInput" placeholder="16">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="16"
+      />
       <label for="floatingInput">Quantidade do produto</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="04/2024">
+      <input
+        type="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="04/2024"
+      />
       <label for="floatingPassword">Data de validade do produto</label>
     </div>
     <div class="d-flex gap-2">
-      <button type="submit" class="btn btn-success" style="height: 58px; padding: 20px;">Filtrar</button>
-      <button class="btn btn-primary" (click)="teste()" style="height: 58px; padding: 10px;">Inserir Produto</button>
+      <button
+        type="submit"
+        class="btn btn-success"
+        style="height: 58px; padding: 16px"
+      >
+        Filtrar
+      </button>
+      <button
+        class="btn btn-primary"
+        (click)="teste()"
+        style="height: 58px; padding: 15px"
+      >
+        Inserir Produto
+      </button>
     </div>
-</div>
-  
+  </div>
+
   <div class="main">
     <div class="card" *ngFor="let product of products">
       <div class="productImage">
-          <img
-            src="../../assets/esmalte.png"
-            class="card-img-top"
-            alt="esmalte"
-          />
+        <img
+          src="../../assets/esmalte.png"
+          class="card-img-top"
+          alt="esmalte"
+        />
       </div>
-  
       <div class="card-body">
         <h5 class="card-title">{{ product.name }}</h5>
         <p class="card-text">{{ product.desc }}</p>
         <p class="card-text">{{ product.categoria }}</p>
-  
         <div id="divBotoes">
-  
-          <a data-bs-toggle="modal" data-bs-target="#productModal" >
-            <button class="btn btn-primary p-2">
-                Editar
-                <img/>
-            </button>
-        </a>
-  
-          <a href="#" class="btn btn-danger p-2">Excluir</a>
-       </div>
+          <a data-bs-toggle="modal" data-bs-target="#productModal">
+            <button class="btn btn-primary p-2">Editar</button>
+          </a>
+          <a class="btn btn-danger p-2">Excluir</a>
+        </div>
       </div>
     </div>
+
+    
   </div>
   
-  <div class="modal fade" *ngFor="let product of products" id="productModal" tabindex="-1">
+  <div
+    class="modal fade"
+    *ngFor="let product of products"
+    id="productModal"
+    tabindex="-1"
+  >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">
             {{ product.name }}
           </h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
         <div class="modal-body">
           {{ product.desc }}
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
             Close
           </button>
           <button type="button" class="btn btn-primary">Save changes</button>
