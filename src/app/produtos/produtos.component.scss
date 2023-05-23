@@ -3,12 +3,14 @@
     margin: 0;
     box-sizing: border-box;
 }
-#container{
+.justifyPage {
     display: grid;
-    grid: 
-    "card card card card card";
-    gap: 5rem   ;
-    padding: 10px;
+    margin: 1rem 2rem;
+}
+.main{
+    display: grid;
+    grid: "card card card card card";
+    gap: 3rem;
 }
 .card-body {
     display: grid;
@@ -22,14 +24,6 @@
     opacity: 0;
     transition: opacity 0.5s;
 }
-// .productImage:hover .card-img-top {
-//     cursor: pointer;
-//     opacity: 0.5;
-// }
-// .productImage:hover .card-img-edit {
-//     opacity: 0.6;
-//     cursor: pointer;
-// }
 #divBotoes{
     display: flex;
     justify-content: space-around;
