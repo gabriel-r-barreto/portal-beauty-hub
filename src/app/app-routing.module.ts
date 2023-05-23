@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent , pathMatch: 'full' },
   { path: 'produtos', component: ProdutosComponent },
   { path: 'gerenciadorProdutos', component: GerenciadorProdutosComponent },
+  { path: 'user-detail/:id', component: GerenciadorProdutosComponent },
 ];
 
 @NgModule({
