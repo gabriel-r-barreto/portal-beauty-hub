@@ -65,7 +65,10 @@
       </div>
       <div class="card-body">
         <h5 class="card-title">{{ product.name }}</h5>
-        <p class="card-text">{{ product.desc }}</p>
+        <div id="divDescricao" class="bg-light-subtle border border-light-subtle-2 p-4 rounded">
+          <p class="card-text" maxlength="80" scroll-container overflow-auto>
+           {{ product.desc }}  </p>
+        </div>
         <p class="card-text">{{ product.categoria }}</p>
         <div id="divBotoes">
           <a data-bs-toggle="modal" data-bs-target="#productModal">
