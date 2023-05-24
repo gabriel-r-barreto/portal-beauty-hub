@@ -1,15 +1,15 @@
 <div class="justifyPage">
-  <div class="d-flex gap-3 justify-content-between">
-    <div class="form-floating mb-3">
+  <div id="dropdownSearch" class="d-flex gap-3 justify-content-between ">
+    <div class="form-floating col mb-3 col">
       <input
         type="email"
         class="form-control"
         id="floatingInput"
         placeholder="Esmalte"
       />
-      <label for="floatingInput">Nome do produto</label>
+      <label for="floatingInput ">Nome do produto</label>
     </div>
-    <div class="form-floating">
+    <div class="form-floating col">
       <input
         type="password"
         class="form-control"
@@ -18,7 +18,7 @@
       />
       <label for="floatingPassword">Categoria do produto</label>
     </div>
-    <div class="form-floating mb-3">
+    <div class="form-floating col mb-3">
       <input
         type="email"
         class="form-control"
@@ -27,7 +27,7 @@
       />
       <label for="floatingInput">Quantidade do produto</label>
     </div>
-    <div class="form-floating">
+    <div class="form-floating col">
       <input
         type="password"
         class="form-control"
@@ -65,7 +65,7 @@
       </div>
       <div class="card-body">
         <h5 class="card-title">{{ product.name }}</h5>
-        <div id="divDescricao" class="bg-light-subtle border border-light-subtle-2 p-4 rounded">
+        <div id="divDescricao" class="bg-warning-subtle border border-dark-subtle p-4 rounded">
           <p class="card-text" maxlength="80" scroll-container overflow-auto>
            {{ product.desc }}  </p>
         </div>
