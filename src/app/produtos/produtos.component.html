@@ -68,9 +68,9 @@
         <p class="card-text">{{ product.desc }}</p>
         <p class="card-text">{{ product.categoria }}</p>
         <div id="divBotoes">
-          <a data-bs-toggle="modal" data-bs-target="#productModal">
-            <button class="btn btn-primary p-2">Editar</button>
-          </a>
+          <!-- <a data-bs-toggle="modal" data-bs-target="#productModal"> -->
+            <button class="btn btn-primary p-2" (click)="editar(product.id)">Editar</button>
+          <!-- </a> -->
           <a class="btn btn-danger p-2">Excluir</a>
         </div>
       </div>
