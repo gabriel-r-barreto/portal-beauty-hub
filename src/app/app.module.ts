@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { GerenciadorProdutosComponent } from './gerenciador-produtos/gerenciador-produtos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from "@angular/material/dialog";
+import { ClienteComponent } from './cliente/cliente.component';
 
 
 
@@ -20,7 +21,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     LoginComponent,
     ProdutosComponent,
     NavbarComponent,
-    GerenciadorProdutosComponent
+    GerenciadorProdutosComponent,
+    ClienteComponent
   ],
   imports: [
     BrowserModule,
