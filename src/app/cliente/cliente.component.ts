@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./cliente.component.scss']
 })
 export class ClienteComponent {
-
+  onSend(){
+    alert('Arquivo Enviado')
+  }
+  Cancel(){
+   
+  }
 }
