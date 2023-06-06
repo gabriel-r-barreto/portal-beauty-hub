@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { AppComponent } from '../app.component';
 import { FormBuilder, Validators } from '@angular/forms';
+import { LoginServiceService } from '../services/login-service.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   form: any;
 
-  constructor(private router: Router, private _AppComponent: AppComponent, private formBuilder: FormBuilder) {
+  constructor(private router: Router, private _AppComponent: AppComponent, private formBuilder: FormBuilder, private _LoginServiceService: LoginServiceService) {
 
   }
 
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
 
-  createForms(){
+  createForms() {
     this.form = this.formBuilder.group({
       email: ["", Validators.required, Validators.email],
       password: ["", Validators.required]
@@ -33,8 +34,16 @@ export class LoginComponent implements OnInit {
   }
 
 
-  login(){
-    this.router.navigate(['produtos']);
+  login() {
+
+    this._LoginServiceService.login(this.form.value.email,this.form.value.password ).subscribe(data => {
+      debugger
+      //@ts-ignore
+      if (data.token){
+        this.router.navigate(['produtos']);
+      }
+     
+    })
   }
 
 }

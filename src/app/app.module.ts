@@ -11,6 +11,7 @@ import { GerenciadorProdutosComponent } from './gerenciador-produtos/gerenciador
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from "@angular/material/dialog";
 import { ClienteComponent } from './cliente/cliente.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -29,7 +30,8 @@ import { ClienteComponent } from './cliente/cliente.component';
     AppRoutingModule,
     ReactiveFormsModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
