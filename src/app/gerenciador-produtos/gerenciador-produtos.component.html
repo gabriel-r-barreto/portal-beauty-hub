@@ -1,27 +1,43 @@
-<div class="m-3">
-    <label for="productName" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="productName" placeholder="Nome do Produto">
-  </div>
-  <div class="m-3">
-    <mat-form-field>
-      <mat-label>Categoria</mat-label>
-      <mat-select name="food">
-        <mat-option *ngFor="let cat of categorias" [value]="cat.id">
-          {{cat.cname}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-  <div class="m-3">
-    <label for="productQuantity" class="form-label">Quatidade</label>
-    <input type="number" class="form-control" id="productQuantity" placeholder="Quantidade do Produto">
-  </div>
-  <div class="m-3">
-    <label for="productValidate" class="form-label">Validade</label>
-    <input type="date" class="form-control" id="productValidate">
-  </div>
 
-  <div class="d-flex gap-3 m-3">
-    <button id="saveButton" type="button" class="btn btn-success">Salvar</button>
-    <button id="cancelButton" type="button" class="btn btn-secondary">Cancelar</button>
-  </div>
+<form  [formGroup]="formCliente" (ngSubmit)="criarProduto()">
+
+<div class="m-3">
+  <label for="productName" class="form-label">Nome</label>
+  <input type="text" class="form-control" id="productName" placeholder="Nome do Produto" formControlName="pname">
+</div>
+<div class="m-3">
+  <label for="productName" class="form-label">Descrição</label>
+  <input type="text" class="form-control" id="descName" placeholder="Descrição do Produto" formControlName="descProd">
+</div>
+<div class="m-3">
+  <mat-form-field>
+    <mat-label>Categoria</mat-label>
+    <mat-select name="food" formControlName="categoriaProd">
+      <mat-option *ngFor="let cat of categorias" [value]="cat.id">
+        {{cat.cname}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="m-3">
+  <label for="productQuantity" class="form-label">Quatidade</label>
+  <input type="number" class="form-control" id="productQuantity" placeholder="Quantidade do Produto" formControlName="quantidade">
+</div>
+<div class="m-3">
+  <label for="productValidate" class="form-label">Validade</label>
+  <input type="date" class="form-control" id="productValidate" formControlName="validade">
+</div>
+
+
+<div class="m-3">
+  <label for="productImage" class="form-label">Imagem</label>
+  <input type="file" (change)="handleImageUpload($event)">
+</div>
+
+<div class="d-flex gap-3 m-3">
+  <button id="saveButton" type="submit" class="btn btn-success">Salvar</button>
+  <button id="cancelButton" type="button" class="btn btn-secondary">Cancelar</button>
+</div>
+
+
+</form>

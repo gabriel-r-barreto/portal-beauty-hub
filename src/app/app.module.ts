@@ -13,6 +13,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import { ClienteComponent } from './cliente/cliente.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSelectModule} from '@angular/material/select';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -33,7 +34,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatDialogModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatSelectModule
+    MatSelectModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
