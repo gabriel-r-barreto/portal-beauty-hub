@@ -21,6 +21,10 @@
 
             <input id="btn" type="button" value="ENTRAR" (click)="login()">
 
+            <div class="alert alert-danger" role="alert" *ngIf="form.status === 'INVALID' && sendForm">
+                Campos não preenchidos ou login não autorizado.
+              </div>
+
         </div>
 
 
