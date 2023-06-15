@@ -11,6 +11,7 @@ import { LoginServiceService } from '../services/login-service.service';
 })
 export class LoginComponent implements OnInit {
   form: any;
+  sendForm = false;
 
   constructor(private router: Router, private _AppComponent: AppComponent, private formBuilder: FormBuilder, private _LoginServiceService: LoginServiceService) {
 
@@ -36,8 +37,13 @@ export class LoginComponent implements OnInit {
 
   login() {
 
+    this.sendForm = true;
+    
+    if (this.form.status === "INVALID"){
+      return;
+    }
+
     this._LoginServiceService.login(this.form.value.email,this.form.value.password ).subscribe(data => {
-      debugger
       //@ts-ignore
       if (data.token){
         this.router.navigate(['produtos']);
