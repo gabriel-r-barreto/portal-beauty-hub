@@ -1,0 +1,19 @@
+<div class=" container p-4 mb-3">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label fs-4">Nome:</label>
+        <input type="text" class="form-control border border-dark" id="exampleFormControlInput1" placeholder="Jose da Silva">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label fs-4">Descrição do produto:</label>
+        <textarea class="form-control border border-dark" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+
+    <div class="mb-3">
+        <label for="formFile" class="form-label fs-4">Cadastre sua foto:</label>
+        <input class="form-control border border-dark w-25 p-3" type="file" id="formFile">
+      </div>
+      <div id="buttonsCase" class="grid gap-3">
+          <button type="button" (click)="onSend()" class="btn btn-success p-3">Enviar</button>
+          <button type="button" (click)="Cancel()" class="btn btn-danger p-3" href="../login/login.component.html">Cancelar</button>
+      </div>
+  </div>

@@ -1,0 +1,274 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#container{ 
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../assets/estetica-corporal.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+#login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 450px;
+    height: 68vh;
+    padding: 10px;
+    border: 1px solid #004a8d; 
+    margin-left: 200px;
+    background-color: #fff;
+    border-radius: 6px;
+}
+input{  
+    padding: 8px;
+    margin: 5px;
+    border: none;
+    border-bottom: 1px solid #004a8d;
+    outline: none;
+}
+input:hover{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #e2902c
+}
+#btn{
+    background-color: #f9a94a;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font: bolder;
+    color: #fff;
+}
+#btn:hover{
+    cursor: pointer;
+    background-color: #e2902c;
+    transition: 0.3s;
+}
+label{
+    margin-left: 10px;
+    color: #004a8d;
+    font-family:sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+
+}
+#logo{
+    width: 150px;
+    height: 100px;
+}
+h3{
+    color: #004a8d;
+    font-family:sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 20px;
+
+}
+#text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#botoes{
+    display: flex;
+    justify-content: center;
+}
+.img_input{
+    width: 20px;
+    height: 20px;
+    position: relative  ;
+    bottom: 55px;
+    left: 380px;
+}
+#enfeite{
+    position: absolute;
+    width: 150px;
+    // bottom: 680px;
+    left: 530px;
+    margin-top: -5rem;
+}
+
+@media (max-width:1000px) {
+    #enfeite{
+        display: none;
+    }
+    .img_input{
+      display: none;
+    }
+     #container{ 
+         width: 100vw;
+         height: 100vh;
+         background-image: url( ../../assets/imgBD2.png); 
+         background-size:100%;
+         background-repeat: no-repeat;
+
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+     }
+      #login{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 400px;
+        height: 60vh;
+        padding: 10px;
+        border: 1px solid #004a8d;
+        background-color: #fff;
+        border-radius: 6px;
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+     
+}
+
+ @media (max-width: 750px) {
+     #container{ 
+         width: 100vw;
+         height: 100vh;
+         background-image: url( ../../assets/imgBD2.png); 
+         background-size:100%;
+         background-repeat: no-repeat;
+         float: left;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: flex-end;
+     }
+     #login{
+         display: flex;
+         flex-direction: column;
+         justify-content: space-evenly;
+         width: 400px;
+         height: 60vh;
+         padding: 10px;
+         border: 1px solid #004a8d;
+         background-color: #fff;
+         border-radius: 6px;
+         margin-left: 0;
+         margin-bottom: 30px;
+     }
+     #enfeite{
+        display: none;
+     }
+     .img_input{
+         display: none;
+     }
+
+ }
+@media (max-width: 550px) {
+    #container{ 
+        width: 100vw;
+        height: 100vh;
+        background-image: url( ../../assets/imgBD2.png); 
+        background-size:100%;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    #login{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 400px;
+        height: 60vh;
+        padding: 10px;
+        border: 1px solid #004a8d;
+        background-color: #fff;
+        border-radius: 6px;
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+    #enfeite{
+        position: absolute;
+        width: 100px;
+        // bottom: 680px;
+        left: 380px;
+        margin-top: -43px;
+    }
+    .img_input{
+        width: 20px;
+        height: 20px;
+        position: relative  ;
+        bottom: 45px;
+        left: 320px;
+    }
+
+}
+@media (max-width: 499px) {
+    #container{ 
+        width: 100vw;
+        height: 100vh;
+        background-image: url( ../../assets/imgBD2.png); 
+        background-size:100%;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    #login{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 320px;
+        height: 60vh;
+        padding: 10px;
+        border: 1px solid #004a8d;
+        background-color: #fff;
+        border-radius: 6px;
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+    #enfeite{
+  display: none;
+    }
+    .img_input{
+       display: none;
+    }
+
+}
+@media (max-width: 350px) {
+    #container{ 
+        width: 100vw;
+        height: 100vh;
+        background-image: url( ../../assets/imgBD3.png); 
+        background-size:100%;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    #login{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 250px;
+        height: 60vh;
+        padding: 10px;
+        border: 1px solid #004a8d;
+        background-color: #fff;
+        border-radius: 6px;
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+
+    #btn{
+        background-color: #f9a94a;
+        border: none;
+        border-radius: 10px;
+        padding: 8px;
+        font: bolder;
+        color: #fff;
+    }
+}

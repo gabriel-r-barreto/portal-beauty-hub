@@ -1,0 +1,29 @@
+<form [formGroup]="form">
+    <div id="container">
+
+        <div id="login">
+            <div>
+                <img id="enfeite" src="../../assets/flores.png" alt="">
+            </div>
+            <div id="text">
+                <img id="logo" src="../../assets/logoSenac.png" alt="logo senac">
+                <h3>Faça Login na sua conta</h3>
+            </div>
+
+            <label for="email">E-mail</label>
+
+            <input type="email" name="email" id="email" formControlName="email">
+            <span> <img class="img_input" src="../../assets/email_logo.png" alt=""></span>
+
+            <label for="senha">Senha</label>
+            <input type="password" maxlength="12" name="senha" id="senha" formControlName="password">
+            <span> <img class="img_input" src="../../assets/password.png" alt=""></span>
+
+            <input id="btn" type="button" value="ENTRAR" (click)="login()">
+
+        </div>
+
+
+    </div>
+
+</form>
