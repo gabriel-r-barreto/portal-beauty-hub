@@ -14,4 +14,8 @@ export class ProdutosService {
   }
 
 
+  categorias(){
+    return this.http.get("https://api-beauty-hub-production.up.railway.app/category")
+  }
+
 }

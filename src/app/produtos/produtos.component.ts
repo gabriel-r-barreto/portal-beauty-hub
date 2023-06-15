@@ -6,6 +6,7 @@ import {
   MatDialogRef,
 } from '@angular/material/dialog';
 import { GerenciadorProdutosComponent } from '../gerenciador-produtos/gerenciador-produtos.component';
+import { ProdutosService } from '../services/produtos.service';
 
 @Component({
   selector: 'app-produtos',
@@ -16,7 +17,7 @@ export class ProdutosComponent implements OnInit {
   products: {
   id: any; name: string; categoria: string; desc: string 
 }[] = [];
-  constructor(private _AppComponent: AppComponent, public dialog: MatDialog) {}
+  constructor(private _ProdutosService: ProdutosService, private _AppComponent: AppComponent, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     localStorage.setItem('Logado', 'true');
@@ -88,6 +89,11 @@ export class ProdutosComponent implements OnInit {
         name: 'Esmalte 0',
       },
     ];
+
+    this._ProdutosService.produtos().subscribe(data => {
+      console.log(data)
+    })
+    
 
     return products;
   }

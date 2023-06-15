@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from "@angular/material/dialog";
 import { ClienteComponent } from './cliente/cliente.component';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
