@@ -122,7 +122,7 @@ export class GerenciadorProdutosComponent implements OnInit {
         })
       }
 
-      this._ProdutosService.criarProdutos(this.id.id, obj).subscribe(data => {
+      this._ProdutosService.criarProdutos(obj).subscribe(data => {
         console.log(data);
       })
 
