@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ProdutosService } from '../services/produtos.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ProdutosComponent } from '../produtos/produtos.component';
 
 
 
@@ -20,7 +21,8 @@ export class GerenciadorProdutosComponent implements OnInit {
   formCliente: any;
   selectedFile: ImageSnippet | undefined;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: { id: number }, private _ProdutosService: ProdutosService, private formBuilder: FormBuilder) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: { id: number }, private _ProdutosService: ProdutosService, private formBuilder: FormBuilder,
+  private _ProdutosComponent: ProdutosComponent) {
   }
 
 
@@ -66,10 +68,27 @@ export class GerenciadorProdutosComponent implements OnInit {
   }
 
 
+  closeModal(){
+    this._ProdutosComponent.closeModal()
+  }
+
 
 
   criarProduto(){
       console.log(this.formCliente.value)
+
+      let obj = {
+        "pname": this.formCliente.value.pname,
+        "descr": this.formCliente.value.descProd,
+        "category_id": this.formCliente.value.categoriaProd,
+        "quantidade": this.formCliente.value.quantidade,
+        "dt_validade": this.formCliente.value.validade
+      }
+
+      this._ProdutosService.criarProdutos(obj).subscribe(data => {
+        console.log(data);
+      })
+
     }
 
 

@@ -43,13 +43,15 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this._LoginServiceService.login(this.form.value.email,this.form.value.password ).subscribe(data => {
-      //@ts-ignore
-      if (data.token){
-        this.router.navigate(['produtos']);
-      }
+    this.router.navigate(['produtos']);
+
+    // this._LoginServiceService.login(this.form.value.email,this.form.value.password ).subscribe(data => {
+    //   //@ts-ignore
+    //   if (data.token){
+    //     this.router.navigate(['produtos']);
+    //   }
      
-    })
+    // })
   }
 
 }

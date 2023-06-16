@@ -175,6 +175,11 @@ totalItems: number;
     });
   }
 
+
+  closeModal(){
+    this.dialog.closeAll;
+  }
+
   editar(idProducts: any){
     console.log(idProducts);
     const dialogRef = this.dialog.open(GerenciadorProdutosComponent, {

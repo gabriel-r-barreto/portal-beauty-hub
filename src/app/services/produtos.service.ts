@@ -18,4 +18,8 @@ export class ProdutosService {
     return this.http.get("https://api-beauty-hub-production.up.railway.app/category")
   }
 
+  criarProdutos(obj: any){
+    return this.http.post("https://api-beauty-hub-production.up.railway.app/products", obj)
+  }
+
 }
