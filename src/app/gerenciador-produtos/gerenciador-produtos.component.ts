@@ -117,12 +117,12 @@ export class GerenciadorProdutosComponent implements OnInit {
       }
 
       if(this.editarAllow){
-        this._ProdutosService.criarProdutos(obj).subscribe(data => {
+        this._ProdutosService.putProdutos(this.id.id, obj).subscribe(data => {
           console.log(data);
         })
       }
 
-      this._ProdutosService.putProdutos(this.id.id, obj).subscribe(data => {
+      this._ProdutosService.criarProdutos(this.id.id, obj).subscribe(data => {
         console.log(data);
       })
 
