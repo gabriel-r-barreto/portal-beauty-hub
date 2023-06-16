@@ -176,7 +176,7 @@ totalItems: number;
   }
 
 
-  closeModal(){
+  closeModal(){ 
     this.dialog.closeAll;
   }
 
