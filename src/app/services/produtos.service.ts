@@ -22,4 +22,8 @@ export class ProdutosService {
     return this.http.post("https://api-beauty-hub-production.up.railway.app/products", obj)
   }
 
+  putProdutos(id: number, obj: any){
+    return this.http.put("https://api-beauty-hub-production.up.railway.app/products/"+id, obj)
+  }
+
 }
