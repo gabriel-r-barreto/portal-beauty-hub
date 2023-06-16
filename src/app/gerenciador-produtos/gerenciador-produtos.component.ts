@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ProdutosService } from '../services/produtos.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ProdutosComponent } from '../produtos/produtos.component';
 
 
 
@@ -19,14 +20,34 @@ export class GerenciadorProdutosComponent implements OnInit {
   categorias: any;
   formCliente: any;
   selectedFile: ImageSnippet | undefined;
+  editarAllow: boolean = false;
+  id: any;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: { id: number }, private _ProdutosService: ProdutosService, private formBuilder: FormBuilder) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: { id: number }, private _ProdutosService: ProdutosService, private formBuilder: FormBuilder,
+  private _ProdutosComponent: ProdutosComponent) {
   }
 
 
   ngOnInit() {
-    this.createForm()
-    this.getCategoria();
+
+    if (this.data){
+      this.createForm()
+      this.getCategoria();
+      let dados: any = this.data.id
+      this.id = this.data.id;
+      this.editarAllow = true;
+      // this.formCliente.value.pname = dados.pname;
+      // this.formCliente.value.descProd = dados.descr;
+      // this.formCliente.value.categoriaProd = dados.category_id;
+      // this.formCliente.value.quantidade = dados.quantidade;
+      // this.formCliente.value.dt_validade = dados.dt_validade  ;
+
+      this.putForm(dados)
+
+    } else {
+      this.createForm()
+      this.getCategoria();
+    }
   }
 
 
@@ -43,9 +64,20 @@ export class GerenciadorProdutosComponent implements OnInit {
     })
   }
 
+  putForm(dados: any) {
+    this.formCliente = this.formBuilder.group({
+      pname: [dados.pname, Validators.required],
+      descProd: [dados.descr, Validators.required],
+      categoriaProd: [dados.category_id, Validators.required],
+      quantidade: [dados.quantidade, Validators.required],
+      validade: [dados.dt_validade, Validators.required],
+      // imagem: [null, Validators.required]
+    })
+  }
+
   getCategoria() {
     this._ProdutosService.categorias().subscribe(data => {
-      console.log(data);
+      // console.log(data);
       this.categorias = data;
     })
   }
@@ -66,10 +98,33 @@ export class GerenciadorProdutosComponent implements OnInit {
   }
 
 
+  closeModal(){
+    this._ProdutosComponent.closeModal()
+  }
+
 
 
   criarProduto(){
       console.log(this.formCliente.value)
+
+      let obj = {
+        "pname": this.formCliente.value.pname,
+        "descr": this.formCliente.value.descProd,
+        "category_id": this.formCliente.value.categoriaProd,
+        "quantidade": this.formCliente.value.quantidade,
+        "dt_validade": this.formCliente.value.validade
+      }
+
+      if(this.editarAllow){
+        this._ProdutosService.criarProdutos(obj).subscribe(data => {
+          console.log(data);
+        })
+      }
+
+      this._ProdutosService.putProdutos(this.id.id, obj).subscribe(data => {
+        console.log(data);
+      })
+
     }
 
 
