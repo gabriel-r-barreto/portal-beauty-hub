@@ -100,6 +100,7 @@ export class GerenciadorProdutosComponent implements OnInit {
 
 
   closeModal(){
+    debugger
     this._ProdutosComponent.closeModal()
   }
 
