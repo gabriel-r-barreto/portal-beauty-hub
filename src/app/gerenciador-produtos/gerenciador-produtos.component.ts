@@ -47,6 +47,7 @@ export class GerenciadorProdutosComponent implements OnInit {
     } else {
       this.createForm()
       this.getCategoria();
+      this.editarAllow = false;
     }
   }
 
