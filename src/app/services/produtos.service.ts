@@ -26,4 +26,8 @@ export class ProdutosService {
     return this.http.put("https://api-beauty-hub-production.up.railway.app/products/"+id, obj)
   }
 
+  deleteProdutos(id: number){
+    return this.http.delete("https://api-beauty-hub-production.up.railway.app/products/"+id)
+  }
+
 }

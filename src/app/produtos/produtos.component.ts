@@ -7,6 +7,7 @@ import {
 } from '@angular/material/dialog';
 import { GerenciadorProdutosComponent } from '../gerenciador-produtos/gerenciador-produtos.component';
 import { ProdutosService } from '../services/produtos.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-produtos',
@@ -160,10 +161,22 @@ totalItems: number;
     this._ProdutosService.produtos().subscribe(data => {
       this.products = data;
     })
-    
-
-   1
+  
   }
+
+  deleteProducts(id: number){
+    this._ProdutosService.deleteProdutos(id).subscribe(data => {
+      // this.products = data;
+      Swal.fire(
+        'Produto Removido!',
+        'Produto foi removido com sucesso',
+        'success'
+      )
+
+      this.getProducts();
+    })
+  }
+  
 
   teste() {
     const dialogRef = this.dialog.open(GerenciadorProdutosComponent, {
@@ -180,12 +193,11 @@ totalItems: number;
     this.dialog.closeAll;
   }
 
-  editar(idProducts: any){
-    console.log(idProducts);
+  editar(Product: any){
     const dialogRef = this.dialog.open(GerenciadorProdutosComponent, {
       height: '400px',
       width: '800px',
-      data: { id: idProducts },
+      data: { produto: Product },
     });
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');

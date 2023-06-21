@@ -1,13 +1,14 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ProdutosService } from '../services/produtos.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProdutosComponent } from '../produtos/produtos.component';
+import Swal from 'sweetalert2'
 
 
 
 class ImageSnippet {
-  constructor(public src: string, public file: File) {}
+  constructor(public src: string, public file: File) { }
 }
 
 
@@ -23,8 +24,7 @@ export class GerenciadorProdutosComponent implements OnInit {
   editarAllow: boolean = false;
   id: any;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: { id: number }, private _ProdutosService: ProdutosService, private formBuilder: FormBuilder,
-  private _ProdutosComponent: ProdutosComponent) {
+  constructor(public dialogRef: MatDialogRef<GerenciadorProdutosComponent>, @Inject(MAT_DIALOG_DATA) public data: { produto: any }, private _ProdutosService: ProdutosService, public formBuilder: FormBuilder) {
   }
 
 
@@ -33,8 +33,8 @@ export class GerenciadorProdutosComponent implements OnInit {
     if (this.data){
       this.createForm()
       this.getCategoria();
-      let dados: any = this.data.id
-      this.id = this.data.id;
+      let dados: any = this.data.produto
+      this.id = this.data.produto.id;
       this.editarAllow = true;
       // this.formCliente.value.pname = dados.pname;
       // this.formCliente.value.descProd = dados.descr;
@@ -66,6 +66,11 @@ export class GerenciadorProdutosComponent implements OnInit {
   }
 
   putForm(dados: any) {
+
+    let data = dados.dt_validade.split("T");
+
+    dados.dt_validade = data[0];
+
     this.formCliente = this.formBuilder.group({
       pname: [dados.pname, Validators.required],
       descProd: [dados.descr, Validators.required],
@@ -87,27 +92,19 @@ export class GerenciadorProdutosComponent implements OnInit {
   handleImageUpload(event: any) {
     const file = event.target.files[0];
     const reader = new FileReader();
-  
+
     reader.onloadend = () => {
       const base64String = reader.result as string;
       // Faça o que quiser com a string Base64, como enviá-la para um servidor
       // console.log(base64String);
       this.formCliente.value.imagem = base64String;
     };
-  
+
     reader.readAsDataURL(file);
   }
 
-
-  closeModal(){
-    debugger
-    this._ProdutosComponent.closeModal()
-  }
-
-
-
   criarProduto(){
-      console.log(this.formCliente.value)
+      // console.log(this.formCliente.value)
 
       let obj = {
         "pname": this.formCliente.value.pname,
@@ -124,9 +121,24 @@ export class GerenciadorProdutosComponent implements OnInit {
       }
 
       this._ProdutosService.criarProdutos(obj).subscribe(data => {
-        console.log(data);
+
+        Swal.fire(
+          'Produto Cadastrado!',
+          'Produto foi cadastrado',
+          'success'
+        )
+      },error => {
+        Swal.fire(
+          'Erro no Cadastrado!',
+          'Entre em contato com o suporte',
+          'error'
+        )
       })
 
+    }
+
+    closeModal() {
+      this.dialogRef.close();
     }
 
 
