@@ -185,6 +185,7 @@ totalItems: number;
     });
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
+      this.getProducts();
     });
   }
 
@@ -201,6 +202,7 @@ totalItems: number;
     });
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
+      this.getProducts();
     });
   }
 }
