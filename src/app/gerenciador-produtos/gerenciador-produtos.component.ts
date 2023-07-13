@@ -77,7 +77,7 @@ export class GerenciadorProdutosComponent implements OnInit {
       categoriaProd: [dados.category_id, Validators.required],
       quantidade: [dados.quantidade, Validators.required],
       validade: [dados.dt_validade, Validators.required],
-      // imagem: [null, Validators.required]
+      imagem: [null, Validators.required]
     })
   }
 
@@ -111,29 +111,27 @@ export class GerenciadorProdutosComponent implements OnInit {
         "descr": this.formCliente.value.descProd,
         "category_id": this.formCliente.value.categoriaProd,
         "quantidade": this.formCliente.value.quantidade,
-        "dt_validade": this.formCliente.value.validade
+        "dt_validade": this.formCliente.value.validade,
+        "imagem" : this.formCliente.value.imagem
       }
 
       if(this.editarAllow){
-        this._ProdutosService.putProdutos(this.id.id, obj).subscribe(data => {
+        this._ProdutosService.putProdutos(this.id, obj).subscribe(data => {
           console.log(data);
+
+          Swal.fire(
+            'Produto Atualizado!',
+            'Produto foi atualizado',
+            'success'
+          )
+        },error => {
+          Swal.fire(
+            'Erro ao Atualizar!',
+            'Entre em contato com o suporte',
+            'error'
+          )
         })
       }
-
-      this._ProdutosService.criarProdutos(obj).subscribe(data => {
-
-        Swal.fire(
-          'Produto Cadastrado!',
-          'Produto foi cadastrado',
-          'success'
-        )
-      },error => {
-        Swal.fire(
-          'Erro no Cadastrado!',
-          'Entre em contato com o suporte',
-          'error'
-        )
-      })
 
     }
 

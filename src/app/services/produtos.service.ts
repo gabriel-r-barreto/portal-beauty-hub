@@ -10,24 +10,24 @@ export class ProdutosService {
 
 
   produtos(){
-    return this.http.get("https://api-beauty-hub-production.up.railway.app/products")
+    return this.http.get("https://api-beauty-hub.vercel.app/products")
   }
 
 
   categorias(){
-    return this.http.get("https://api-beauty-hub-production.up.railway.app/category")
+    return this.http.get("https://api-beauty-hub.vercel.app/category")
   }
 
   criarProdutos(obj: any){
-    return this.http.post("https://api-beauty-hub-production.up.railway.app/products", obj)
+    return this.http.post("https://api-beauty-hub.vercel.app/products", obj)
   }
 
   putProdutos(id: number, obj: any){
-    return this.http.put("https://api-beauty-hub-production.up.railway.app/products/"+id, obj)
+    return this.http.patch("https://api-beauty-hub.vercel.app/products/"+id, obj)
   }
 
   deleteProdutos(id: number){
-    return this.http.delete("https://api-beauty-hub-production.up.railway.app/products/"+id)
+    return this.http.delete("https://api-beauty-hub.vercel.app/products/"+id)
   }
 
 }
