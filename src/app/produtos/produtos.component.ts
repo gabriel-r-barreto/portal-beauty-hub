@@ -31,7 +31,7 @@ totalItems: number;
     localStorage.setItem('Logado', 'true');
     this._AppComponent.ngOnInit();
     //AQUI É O INICIO DA EXECUÇÃO DAS FUNÇÕES
-    this.products = this.getProducts();
+    this.getProducts();
   }
 
   getProducts() {
@@ -160,6 +160,7 @@ totalItems: number;
 
     this._ProdutosService.produtos().subscribe(data => {
       this.products = data;
+      console.log(this.products[0].image_base64.data)
     })
   
   }
