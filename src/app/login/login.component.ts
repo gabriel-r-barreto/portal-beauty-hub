@@ -49,9 +49,7 @@ export class LoginComponent implements OnInit {
        //@ts-ignore
        if (data.token){
         this.router.navigate(['produtos']);
-       } else {
-          this.sendForm = true;
-     
+       } 
      })
   }
 
