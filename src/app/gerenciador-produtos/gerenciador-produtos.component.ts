@@ -96,7 +96,7 @@ export class GerenciadorProdutosComponent implements OnInit {
     reader.onloadend = () => {
       const base64String = reader.result as string;
       // Faça o que quiser com a string Base64, como enviá-la para um servidor
-      // console.log(base64String);
+      //console.log(base64String);
       this.formCliente.value.imagem = base64String;
     };
 
@@ -104,7 +104,7 @@ export class GerenciadorProdutosComponent implements OnInit {
   }
 
   criarProduto(){
-      // console.log(this.formCliente.value)
+      //console.log(this.formCliente.value)
 
       let obj = {
         "pname": this.formCliente.value.pname,
@@ -127,6 +127,20 @@ export class GerenciadorProdutosComponent implements OnInit {
         },error => {
           Swal.fire(
             'Erro ao Atualizar!',
+            'Entre em contato com o suporte',
+            'error'
+          )
+        })
+      } else {
+        this._ProdutosService.criarProdutos(obj).subscribe(data => {
+          Swal.fire(
+            'Produto Criado!',
+            'Produto foi Criado com sucesso',
+            'success'
+          )
+        },error => {
+          Swal.fire(
+            'Erro ao Criar!',
             'Entre em contato com o suporte',
             'error'
           )
