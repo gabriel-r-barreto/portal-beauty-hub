@@ -15,7 +15,7 @@ export class LoginServiceService {
     }
 
 
-   return this.http.post("https://api-beauty-hub-production.up.railway.app/users/login", obj)
+   return this.http.post("https://api-beauty-hub.vercel.app/users/login", obj)
     
   }
 

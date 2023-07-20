@@ -160,7 +160,7 @@ totalItems: number;
 
     this._ProdutosService.produtos().subscribe(data => {
       this.products = data;
-      console.log(this.products[0].image_base64.data)
+      // console.log(this.products[0].image_base64.data)
     })
   
   }
