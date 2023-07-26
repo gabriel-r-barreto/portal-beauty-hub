@@ -58,7 +58,7 @@
     <div class="card" *ngFor="let product of products | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalItems }">
       <div class="productImage">
         <img
-          src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
+          src="{{product.image_base64}}"
           class="card-img-top"
           alt="esmalte"
         />
