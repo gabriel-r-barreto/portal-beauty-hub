@@ -11,7 +11,7 @@ export class LoginServiceService {
 
     let obj = {
       "email": email,
-      "pass" : passwrd
+      "passwrd" : passwrd
     }
 
 
